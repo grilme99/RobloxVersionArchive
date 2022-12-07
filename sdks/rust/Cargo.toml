@@ -1,0 +1,11 @@
+[package]
+name = "roblox_version_archive"
+description = "Easy and safe access to Roblox deployment version information"
+license = "MIT OR Apache-2.0"
+version = "1.0.0"
+edition = "2021"
+
+[dependencies]
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

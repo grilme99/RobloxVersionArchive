@@ -152,3 +152,12 @@ pub struct DeploymentRecord {
     pub patch: u32,
     pub change_list: u64, // Future proofing. Unsure how big this can get.
 }
+
+impl ToString for DeploymentRecord {
+    fn to_string(&self) -> String {
+        return format!(
+            "{}.{}.{}.{}",
+            self.major_rev, self.version, self.patch, self.change_list
+        );
+    }
+}

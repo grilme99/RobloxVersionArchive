@@ -25,6 +25,7 @@ dependencies = [
  "env_logger",
  "log",
  "reqwest",
+ "roblox_version_archive",
  "serde",
  "serde_json",
  "tokio",
@@ -676,6 +677,17 @@ dependencies = [
  "wasm-bindgen-futures",
  "web-sys",
  "winreg",
+]
+
+[[package]]
+name = "roblox_version_archive"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a696875a7940e64844ba7a5150c6e1188c36889e91267b71de7920c134332a1e"
+dependencies = [
+ "reqwest",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

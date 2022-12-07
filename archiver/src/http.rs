@@ -1,5 +1,6 @@
 use anyhow::Context;
 use reqwest::Client;
+use roblox_version_archive::prelude::{BinaryType, PrimaryChannel};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
@@ -13,10 +14,14 @@ pub struct LiveDeploymentInfo {
 pub async fn get_deployment_info(
     client: &Client,
     base_url: &str,
-    binary_type: &str,
-    channel: &str,
+    binary_type: &BinaryType,
+    channel: &PrimaryChannel,
 ) -> anyhow::Result<LiveDeploymentInfo> {
-    let url = format!("{base_url}/{binary_type}/channel/{channel}");
+    let url = format!(
+        "{base_url}/{}/channel/{}",
+        binary_type.to_string(),
+        channel.to_string()
+    );
 
     let deployment_info = client
         .get(&url)

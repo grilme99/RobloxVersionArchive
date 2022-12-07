@@ -37,7 +37,7 @@ struct DeploymentRecord {
 }
 ```
 
-Records are stored in a `DeployHistory.json` file as a Map with a string key (corresponding to the `changeList` value) and `DeploymentRecord` value:
+Records are stored in a `DeployHistory.json` file as a Map with a string key (corresponding to the `changeList`) and `DeploymentRecord` value.
 
 Like this: `Map<String, DeploymentRecord>`
 

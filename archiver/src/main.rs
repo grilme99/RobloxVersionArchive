@@ -77,6 +77,9 @@ async fn check_deployment_space(
             let latest_deployment_record = DeploymentRecord::try_from(latest_deployment)
                 .context("Failed to parse latest deployment into savable record")?;
 
+            let serialized_latest_deploy = serde_json::to_string_pretty(&latest_deployment_record)
+                .context("Failed to convert latest deployment record to string")?;
+
             let records_content = fs::read_to_string(&deploy_history_path)
                 .context(format!("Failed to read {deploy_history_path:?}"))?;
 
@@ -96,8 +99,12 @@ async fn check_deployment_space(
             let serialized_records =
                 serde_json::to_string(&records).context("Failed to convert records to string")?;
 
-            fs::write(&deploy_history_path, serialized_records)
+            fs::write(&deploy_history_path, &serialized_records)
                 .context("Failed to write deploy history to path")?;
+
+            let latest_deploy_path = channel_path.join("LatestDeploy.json");
+            fs::write(&latest_deploy_path, &serialized_latest_deploy)
+                .context("Failed to write latest deploy to path")?;
         }
     }
 

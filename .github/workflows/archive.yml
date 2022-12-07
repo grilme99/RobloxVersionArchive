@@ -21,6 +21,10 @@ jobs:
           ./tools/archive.sh
         shell: bash
 
+      - name: Update Git URL
+        run: git remote set-url origin git@github.com:grilme99/RobloxVersionArchive.git
+        shell: bash
+
       - uses: EndBug/add-and-commit@v9
         with:
           message: 'Update archive'

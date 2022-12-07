@@ -2,8 +2,8 @@ name: archive
 on:
   workflow_dispatch:
   schedule:
-    # Every 6 hours
-    - cron: "0 */6 * * *"
+    # Every 1 hour
+    - cron: "0 */1 * * *"
 
 jobs:
   update_archive:

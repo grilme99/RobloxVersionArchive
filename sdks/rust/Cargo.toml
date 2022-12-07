@@ -2,7 +2,7 @@
 name = "roblox_version_archive"
 description = "Easy and safe access to Roblox deployment version information"
 license = "MIT OR Apache-2.0"
-version = "1.0.2"
+version = "1.0.3"
 edition = "2021"
 
 [dependencies]

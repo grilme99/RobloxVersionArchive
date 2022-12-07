@@ -8,7 +8,7 @@ use serde::{Deserialize, Serialize};
 /// The difference between the `LIVE` and `zlive` channels is not totally clear. `LIVE` is the main release channel that
 /// should be used. `z` channels are typically internal, and `zlive` is most likely some kind of internal staging
 /// channel.
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Hash)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq, PartialOrd, Hash)]
 pub enum PrimaryChannel {
     Live,
     ZLive,
@@ -44,7 +44,7 @@ pub const PRIMARY_CHANNELS: [PrimaryChannel; 4] = [
 ];
 
 /// All known binary types currently supported by Roblox. Open an issue if there are any more!
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Hash)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq, PartialOrd, Hash)]
 pub enum BinaryType {
     WindowsPlayer,
     WindowsStudio,
@@ -77,7 +77,7 @@ pub const BINARY_TYPES: [BinaryType; 5] = [
 ];
 
 /// Record files that are stored in the archive.
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Hash)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq, PartialOrd, Hash)]
 pub enum RecordType {
     LatestDeploy,
     DeployHistory,
@@ -95,7 +95,7 @@ impl ToString for RecordType {
 }
 
 /// Make sure that Global and Luobu deployments are distinctly different in the archive.
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Hash)]
+#[derive(Debug, Deserialize, Serialize, Clone, Copy, PartialEq, PartialOrd, Hash)]
 pub enum DeploymentSpace {
     /// The main deployment space for global users. Unless you are developing an application for China/Luobu, you must
     /// use this channel.

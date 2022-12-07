@@ -15,7 +15,9 @@ jobs:
           toolchain: nightly
 
       - name: Run archive script
-        run: ./tools/archive.sh
+        run: |
+          chmod +x ../tools/archive.sh
+          ./tools/archive.sh
         shell: bash
 
       - name: Commit changes

@@ -24,7 +24,52 @@ This archive does not use DeployHistory. Instead, it frequently polls Roblox's `
 
 ## Format
 
-TODO
+The current deployment record format looks like this:
+```rust
+struct DeploymentRecord {
+    clientVersion: String,
+    bootstrapperVersion: String,
+
+    majorRev: u32,
+    version: u32,
+    patch: u32,
+    changeList: u64,
+}
+```
+
+Records are stored in a `DeployHistory.json` file as a Map with a string key (corresponding to the `changeList` value) and `DeploymentRecord` value:
+
+Like this: `Map<String, DeploymentRecord>`
+
+You can also access the latest deployment info in the `LatestDeploy.json` file.
+
+### Accessing Deployments
+
+This repository is structured to allow straightforward access to whatever deployment you are looking for. Use the following URL as a template:
+
+`https://raw.githubusercontent.com/grilme99/RobloxVersionArchive/main/{DEPLOYMENT_SPACE}/{BINARY_TYPE}/{CHANNEL}/{RECORD}`
+
+The current supported values for each are:
+
+`DEPLOYMENT_SPACE`:
+- `Global`
+- `China`
+
+`BINARY_TYPE`:
+- `WindowsPlayer`
+- `WindowsStudio`
+- `WindowsStudio64`
+- `MacPlayer`
+- `MacStudio`
+
+`CHANNEL_NAME`:
+- `live`
+- `zcanary`
+- `zintegration`
+
+`RECORD`:
+- `DeployHistory.json`
+- `LatestDeploy.json`
 
 ## License
 

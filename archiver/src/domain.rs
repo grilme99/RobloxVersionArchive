@@ -7,7 +7,7 @@ use crate::http::LiveDeploymentInfo;
 
 /// This isn't an exhaustive list of channel names (there's a lot of lesser-known ones), but it's the only ones users
 /// will typically care about.
-pub const CHANNEL_NAMES: [&str; 3] = ["zlive", "zcanary", "zintegration"];
+pub const CHANNEL_NAMES: [&str; 4] = ["live", "zlive", "zcanary", "zintegration"];
 
 /// All the supported binary types we want to archive. At some point this will hopefully grow to support Apple Silicon.
 pub const BINARY_TYPES: [&str; 5] = [

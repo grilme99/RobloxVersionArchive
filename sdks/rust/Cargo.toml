@@ -1,5 +1,7 @@
 [package]
 name = "roblox_version_archive"
+description = "Easy and safe access to Roblox deployment version information"
+license = "MIT+Apache2"
 version = "1.0.0"
 edition = "2021"
 

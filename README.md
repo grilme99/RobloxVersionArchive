@@ -18,7 +18,7 @@ Parsing Roblox's DeployHistory format is troublesome. It can change, information
 
 ### Safe?
 
-The biggest problem with Roblox's DeployHistory is that it isn't safe to consume. It provides no way to distinguish between Global and China versions, which poses a significant risk to user accounts. If a global Roblox user uses the China version of Roblox, all sorts of weird affects can happen to their account (including deletion).
+The biggest problem with Roblox's DeployHistory is that it isn't safe to consume. It provides no way to distinguish between Global and Luobu versions, which poses a significant risk to user accounts. If a global Roblox user uses the Luobu version of Roblox, all sorts of weird affects can happen to their account (including deletion).
 
 This archive does not use DeployHistory. Instead, it frequently polls Roblox's `client-version` API for new versions of each deployment option. This is the same API Roblox's official boostrappers use to get the latest version of their applications.
 
@@ -53,7 +53,7 @@ The current supported values for each are:
 
 `DEPLOYMENT_SPACE`:
 - `Global`
-- `China`
+- `Luobu`
 
 `BINARY_TYPE`:
 - `WindowsPlayer`

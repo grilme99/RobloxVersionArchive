@@ -1,0 +1,2 @@
+cd archiver/
+cargo run

@@ -1,0 +1,25 @@
+name: archive
+on:
+  schedule:
+    # Every 6 hours
+    - cron: "0 */6 * * *"
+
+jobs:
+  update_archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+
+      - name: Run archive script
+        run: ./tools/archive.sh
+        shell: bash
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'Archival Bot'
+          git config --global user.email 'grilme99@users.noreply.github.com'
+          git commit -am "Update archive"
+          git push

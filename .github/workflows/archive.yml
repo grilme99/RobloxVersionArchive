@@ -16,7 +16,7 @@ jobs:
 
       - name: Run archive script
         run: |
-          chmod +x ../tools/archive.sh
+          chmod +x ./tools/archive.sh
           ./tools/archive.sh
         shell: bash
 

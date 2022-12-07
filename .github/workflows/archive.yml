@@ -24,10 +24,6 @@ jobs:
           ./tools/archive.sh
         shell: bash
 
-      - name: Commit changes
-        run: |
-          git config --global user.name 'Archival Bot'
-          git config --global user.email 'grilme99@users.noreply.github.com'
-          git add *
-          git commit -am "Update archive"
-          git push
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Update archive'

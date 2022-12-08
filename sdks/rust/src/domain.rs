@@ -117,6 +117,14 @@ impl DeploymentSpace {
         }
     }
 
+    /// Global and Luobu have separate CDNs.
+    pub fn get_cdn_domain(&self) -> &str {
+        match self {
+            Self::Global => "rbxcdn.com",
+            Self::Luobu => "rbxcdn.qq.com",
+        }
+    }
+
     /// Quick utility for getting the `client-version` API url based on deployment space.
     pub fn get_client_version_url(&self) -> String {
         format!(

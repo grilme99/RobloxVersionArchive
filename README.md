@@ -63,6 +63,7 @@ The current supported values for each are:
 - `MacStudio`
 
 `CHANNEL_NAME`:
+- `LIVE`
 - `live`
 - `zcanary`
 - `zintegration`

@@ -64,7 +64,7 @@ The current supported values for each are:
 
 `CHANNEL_NAME`:
 - `LIVE`
-- `live`
+- `zlive`
 - `zcanary`
 - `zintegration`
 

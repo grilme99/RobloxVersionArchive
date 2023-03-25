@@ -1,8 +1,8 @@
 {
-  "clientVersion": "version-04582b53af124be3",
-  "bootstrapperVersion": "1, 6, 100, 5700106",
+  "clientVersion": "version-ea527b79dfb74a89",
+  "bootstrapperVersion": "1, 6, 100, 5700125",
   "majorRev": 0,
   "version": 570,
   "patch": 100,
-  "changeList": 5700106
+  "changeList": 5700125
 }

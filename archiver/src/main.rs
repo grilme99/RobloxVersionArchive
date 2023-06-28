@@ -25,9 +25,9 @@ async fn main() -> anyhow::Result<()> {
         .await
         .context("Failed to update archive for deployment space Global")?;
 
-    check_deployment_space(&DeploymentSpace::Luobu, &client)
-        .await
-        .context("Failed to update archive for deployment space Luobu")?;
+    // check_deployment_space(&DeploymentSpace::Luobu, &client)
+    //     .await
+    //     .context("Failed to update archive for deployment space Luobu")?;
 
     Ok(())
 }

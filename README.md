@@ -53,7 +53,7 @@ The current supported values for each are:
 
 `DEPLOYMENT_SPACE`:
 - `Global`
-- `Luobu`
+- ~~`Luobu`~~ (Disabled because Luobu no longer reports deployments publicly)
 
 `BINARY_TYPE`:
 - `WindowsPlayer`
